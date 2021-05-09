@@ -15,6 +15,24 @@ var obj;
 ws.onmessage = function (event) {
   obj = JSON.parse(event.data);
   $('#userCount').html(obj.users);
+  if (obj.temp) {
+    $('#temp').html(obj.temp + "&#8451;");
+    if (obj.fan) {
+      $('#fan').html("Fan is On");
+    }
+    else {
+      $('#fan').html("Fan is Off");
+    }
+  }
+  else {
+    $('#fan').html("Device not Connected");
+  }
+  if (obj.humidity) {
+    $('#humidity').html("Humidity : " + obj.humidity + "%");
+  }
+  else {
+    $('#humidity').html("");
+  }
 
   if (obj.switch1 == 0) {
     $('#switch1').attr('src', off);

@@ -3,27 +3,56 @@ body {
 }
 
 #backplate {
-	position: relative; 
-	top: 0; 
-	left: 0; 
+	position: relative;
+	top: 0;
+	left: 0;
 	z-index: -1;
 }
 
 #switch1 {
-	position: absolute; 
-	top: 235px; 
+	position: absolute;
+	top: 235px;
 	left: 175px;
 }
 
 #switch2 {
-	position: absolute; 
-	top: 415px; 
+	position: absolute;
+	top: 415px;
 	left: 175px;
 }
 
 #switch3 {
-	position: absolute; 
-	top: 595px; 
+	position: absolute;
+	top: 595px;
 	left: 175px;
 
+}
+
+#temperature {
+	position: absolute;
+	top: 420px;
+	left: 755px;
+  text-align: center;
+  font-size: 80px;
+  color: #71ff33;
+}
+
+#fan {
+	position: absolute;
+	top: 380px;
+	left: 690px;
+  text-align: left;
+  font-size: 20px;
+  color: #71ff33;
+  font-family: monospace;
+}
+
+#humidity {
+	position: absolute;
+	top: 530px;
+	left: 690px;
+  text-align: left;
+  font-size: 20px;
+  color: #71ff33;
+  font-family: monospace;
 }

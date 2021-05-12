@@ -11,11 +11,14 @@ var obj;
 ws.onmessage = function (event) {
   obj = JSON.parse(event.data);
   $('#userCount').html(obj.users);
+  var spinner = document.getElementById("spinner");
+  spinner.style.display = "none";
 
   if (obj.temp) {
     $('#temp').html(obj.temp + "&#8451;");
     if (obj.fan) {
       $('#fan').html("Fan is On");
+      spinner.style.display = "block";
     }
     else {
       $('#fan').html("Fan is Off");
@@ -29,5 +32,6 @@ ws.onmessage = function (event) {
   }
   else {
     $('#humidity').html("");
+    $('#temp').html("");
   }
 }

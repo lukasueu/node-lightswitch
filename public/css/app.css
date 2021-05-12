@@ -13,9 +13,6 @@ body {
   position: absolute;
   border-collapse:collapse;
   border-spacing:0;
-  border-color:black;
-  border-style:solid;
-  border-width:1px;
   left: 130px;
   top: 380px;
   width: 334px;
@@ -41,4 +38,22 @@ body {
   font-size: 20px;
   color: #71ff33;
   font-family: monospace;
+}
+
+.spin {
+  position: absolute;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid black;
+  border-bottom: 10px solid black;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  animation: spin 2s linear infinite;
+  top: 108px;
+  left: 83px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

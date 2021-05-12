@@ -49,8 +49,8 @@ body {
   width: 5px;
   height: 5px;
   animation: spin 2s linear infinite;
-  top: 108px;
-  left: 83px;
+  top: 10px;
+  left: 10px;
 }
 
 @keyframes spin {

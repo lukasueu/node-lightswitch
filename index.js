@@ -15,10 +15,12 @@ var wss = new WebSocketServer({server: server});
 console.log("websocket server created");
 
 var users = 0;
+var temp = 0;
+var humidity = 0;
 
 wss.on("connection", function(ws) {
   users++;
-  var obj = {users: users};
+  var obj = {users: users, temp: temp, humidity: humidity};
   wss.broadcast(JSON.stringify(obj));
 
   console.log("websocket connection open");
@@ -29,7 +31,13 @@ wss.on("connection", function(ws) {
     wss.broadcast(JSON.stringify(obj));
 
   })
+
+  ws.on("message", function (message) {
+	wss.broadcast(message);
+  })
+
 })
+
 
 wss.broadcast = function broadcast(data) {
 	wss.clients.forEach(function each(client) {

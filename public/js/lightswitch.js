@@ -1,6 +1,10 @@
 var host = location.origin.replace(/^http/, 'ws');
 var ws = new WebSocket(host);
 
+ws.onopen = function (event) {
+  $('img').on('click', sendState);
+};
+
 var obj;
 
 //gets state of switches from server
